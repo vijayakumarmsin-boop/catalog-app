@@ -4,4 +4,4 @@ pillow
 requests
 jinja2
 openpyxl
-weasyprint
+reportlab
