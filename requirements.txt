@@ -1,6 +1,7 @@
 streamlit
 pandas
-Pillow
+pillow
 requests
 jinja2
 openpyxl
+weasyprint
