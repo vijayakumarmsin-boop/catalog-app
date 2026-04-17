@@ -285,7 +285,7 @@ if st.button("Create Catalogue PDF", key="create_pdf_unique"):
     sales_phone=sales_info["phone"]
 )
 
-    HTML(string=html).write_pdf("catalog.pdf")
+    st.download_button("Download Catalogue", html, file_name="catalog.html")
 
     with open("catalog.pdf", "rb") as f:
         st.download_button("Download Catalogue PDF", f, file_name="catalog.pdf")
