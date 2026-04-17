@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+@page{
+    size: 1920px 1080px;
+    margin:0;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+    width:1920px;
+    height:1080px;
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= PAGE ================= */
+.center-page {
+    width:1920px;
+    height:1080px;
+    position:relative;
+    page-break-after:always;
+    overflow:hidden;
+}
+
+/* FULL BACKGROUND FIX */
+.bg {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    width:1920px;
+    height:1080px;
+    position:relative;
+    page-break-after:always;
+    overflow:hidden;
+    display:flex;
+}
+
+/* LEFT + RIGHT */
+.left-column,
+.right-column {
+    width:50%;
+    height:100%;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+}
+
+/* TITLE (NO PUSH ISSUE FIX) */
+.title {
+    font-size:42px;
+    font-weight:bold;
+    text-align:center;
+    width:80%;
+    min-height:110px;
+    max-height:110px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    margin-top:8%;
+}
+
+/* IMAGE FIX */
+.image-box {
+    width:80%;
+    height:520px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.image-box img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* PRICE */
+.price-row {
+    display: flex;
+    justify-content: center;   /* 🔥 IMPORTANT */
+    align-items: center;
+    gap: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.price {
+    background:aqua;
+    padding:10px 15px;
+    border-radius:8px;
+}
+
+.mrp {
+    background:violet;
+    padding:10px 15px;
+    border-radius:8px;
+}
+
+/* DESCRIPTION */
+.description {
+    font-size:20px;
+    width:80%;
+    margin-top:15px;
+    text-align:center;
+}
+
+/* FIRST PAGE CENTER FIX */
+.center-box {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.footer {
+    position:absolute;
+    bottom:20px;
+    width:100%;
+    text-align:center;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= FIRST PAGE ================= -->
+<div class="center-page">
+
+    <img src="{{first_page}}" class="bg">
+
+    <div class="center-box">
+        <img src="{{client_logo}}
+        " style="height:300px;
+        margin-top:20%;
+        margin-left:13%;">
+    </div>
+
+</div>
+<!-- ================= PRODUCTS ================= -->
+{% set valid_products = [] %}
+{% for p in products %}
+    {% if p.image %}
+        {% set _ = valid_products.append(p) %}
+    {% endif %}
+{% endfor %}
+
+{% for i in range(0, valid_products|length, 2) %}
+
+{% set p1 = valid_products[i] %}
+{% set p2 = valid_products[i+1] if i+1 < valid_products|length else None %}
+
+<div class="container">
+
+    <img src="{{middle_page}}" style="
+        position:absolute;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        z-index:-1;
+    ">
+    <div style="
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    z-index:10;
+">
+    <img src="{{ud_logo}}" style="height:120px;">
+</div>
+
+    <!-- ================= BOTH PRODUCTS ================= -->
+    {% if p1 and p1.image and p2 and p2.image %}
+
+    <!-- LEFT -->
+    <div class="left-column">
+
+        <div class="title">{{p1.name}}</div>
+
+        <div class="image-box">
+            <img src="{{p1.image}}">
+        </div>
+
+        <div class="price-row">
+            <div class="price">UD Price: ₹ {{p1.price}}</div>
+            <div class="mrp">MRP: ₹ {{p1.mrp}}</div>
+        </div>
+
+        
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-column">
+
+        <div class="title">{{p2.name}}</div>
+
+        <div class="image-box">
+            <img src="{{p2.image}}">
+        </div>
+
+        <div class="price-row">
+            <div class="price">UD Price: ₹ {{p2.price}}</div>
+            <div class="mrp">MRP: ₹ {{p2.mrp}}</div>
+        </div>
+
+    </div>
+
+    <!-- ================= SINGLE PRODUCT CENTER FIX ================= -->
+    {% elif p1 and p1.image %}
+
+    <div style="
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+    ">
+
+        <div class="title" style="margin:0;">{{p1.name}}</div>
+
+        <div class="image-box" style="height:600px;">
+            <img src="{{p1.image}}">
+        </div>
+
+       <div class="price-row" style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:20px;
+        margin-top:20px;
+        width:100%;
+        ">
+            <div class="price">UD Price:₹ {{p1.price}}</div>
+            <div class="mrp">MRP: ₹ {{p1.mrp}}</div>
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+
+<div class="footer">
+    Urbane Design Corporate Gifting Simplified | https://urbd.in | {{sales_phone}}
+</div>
+
+{% endfor %}
+
+<!-- TERMS -->
+<div class="center-page">
+    <img src="{{terms_page}}" class="bg">
+</div>
+
+<!-- LAST PAGE -->
+<div class="center-page">
+    <img src="{{last_page}}" class="bg">
+
+    <div style="
+        position:absolute;
+        bottom:20%;
+        width:100%;
+        text-align:center;
+        font-size:35px;
+        margin-left:31%;
+
+
+
+    ">
+        {{sales_phone}}
+    </div>
+</div>
+
+</body>
+</html>
