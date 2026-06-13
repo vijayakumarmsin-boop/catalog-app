@@ -1,0 +1,7 @@
+streamlit
+pandas
+pillow
+requests
+jinja2
+openpyxl
+reportlab
