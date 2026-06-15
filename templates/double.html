@@ -63,6 +63,7 @@ html, body {
 
 /* TITLE (NO PUSH ISSUE FIX) */
 .title {
+<<<<<<< HEAD
     font-size: 42px;
     font-weight: bold;
     text-align: center;
@@ -82,6 +83,19 @@ html, body {
 
 
     margin-top:10%;
+=======
+    font-size:42px;
+    font-weight:bold;
+    text-align:center;
+    width:80%;
+    min-height:110px;
+    max-height:110px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    margin-top:8%;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 /* IMAGE FIX */
@@ -91,8 +105,11 @@ html, body {
     display:flex;
     justify-content:center;
     align-items:center;
+<<<<<<< HEAD
     margin-top:15px;
 
+=======
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 .image-box img {
@@ -114,20 +131,30 @@ html, body {
 }
 
 .price {
+<<<<<<< HEAD
     background: linear-gradient(45deg, #ff0057, #ff7a00);
     color: #fff;
     font-weight: bold;
+=======
+    background:aqua;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     padding:10px 15px;
     border-radius:8px;
 }
 
 .mrp {
+<<<<<<< HEAD
     background: linear-gradient(45deg, #00c6ff, #0072ff); /* blue gradient */
     color: #fff;
     font-weight: bold;
     padding:10px 15px;
     border-radius:8px;
     
+=======
+    background:violet;
+    padding:10px 15px;
+    border-radius:8px;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 /* DESCRIPTION */
@@ -155,6 +182,7 @@ html, body {
     bottom:20px;
     width:100%;
     text-align:center;
+<<<<<<< HEAD
     font-size:25px;
 }
 a {
@@ -169,6 +197,9 @@ a {
     font-size: 30px;
     vertical-align: middle;
     color: #25D366;
+=======
+    font-size:18px;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 </style>
@@ -185,8 +216,13 @@ a {
     <div class="center-box">
         <img src="{{client_logo}}
         " style="height:300px;
+<<<<<<< HEAD
         margin-top:27%;
         margin-left: 8%;">
+=======
+        margin-top:20%;
+        margin-left:13%;">
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     </div>
 
 </div>
@@ -234,6 +270,7 @@ a {
         </div>
 
         <div class="price-row">
+<<<<<<< HEAD
              <div class="mrp">MRP: ₹ {{p1.mrp}}</div>
             <div class="price">UD Price: ₹ {{p1.price}} + GST</div>
         </div><br>
@@ -242,6 +279,12 @@ a {
         {{p1.delivery}}
         </div>
         {% endif %}
+=======
+            <div class="price">UD Price: ₹ {{p1.price}}</div>
+            <div class="mrp">MRP: ₹ {{p1.mrp}}</div>
+        </div>
+
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
         
 
     </div>
@@ -256,6 +299,7 @@ a {
         </div>
 
         <div class="price-row">
+<<<<<<< HEAD
              <div class="mrp">MRP: ₹ {{p2.mrp}}</div>
             <div class="price">UD Price: ₹ {{p2.price}} + GST</div>
         </div><br>
@@ -265,6 +309,11 @@ a {
         </div>
         {% endif %}
 
+=======
+            <div class="price">UD Price: ₹ {{p2.price}}</div>
+            <div class="mrp">MRP: ₹ {{p2.mrp}}</div>
+        </div>
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 
     </div>
 
@@ -295,6 +344,7 @@ a {
         margin-top:20px;
         width:100%;
         ">
+<<<<<<< HEAD
             <div class="mrp">MRP: ₹ {{p1.mrp}}</div>
             <div class="price">UD Price: ₹ {{p1.price}} + GST</div>
             </div>
@@ -303,6 +353,11 @@ a {
         {{p1.delivery}}
         </div>
         {% endif %}
+=======
+            <div class="price">UD Price:₹ {{p1.price}}</div>
+            <div class="mrp">MRP: ₹ {{p1.mrp}}</div>
+        </div>
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     </div>
 
     {% endif %}
@@ -310,11 +365,15 @@ a {
 </div>
 
 <div class="footer">
+<<<<<<< HEAD
     Urbane Design's - Corporate Gifting Simplified |
     <a href="https://urbd.in/" target="_blank">urbd.in</a> |
     <span class="wa-icon">💬</span> 📞 <a href="https://wa.me/{{sales_phone}}">{{sales_phone}}</a> |
     <span class="mail-icon">✉</span>
     <a href="mailto:{{sales_email}}">{{sales_email}}</a>
+=======
+    Urbane Design Corporate Gifting Simplified | https://urbd.in | {{sales_phone}}
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 </div>
 
 {% endfor %}
@@ -334,11 +393,20 @@ a {
         width:100%;
         text-align:center;
         font-size:35px;
+<<<<<<< HEAD
         margin-left:32%;
 
     ">
        <a href="https://wa.me/{{sales_phone}}">{{sales_phone}}</a>
 
+=======
+        margin-left:31%;
+
+
+
+    ">
+        {{sales_phone}}
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     </div>
 </div>
 

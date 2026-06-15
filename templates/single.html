@@ -56,6 +56,7 @@ body {
 
 
 .title {
+<<<<<<< HEAD
     font-size: 42px;
     font-weight: bold;
     text-align: center;
@@ -72,29 +73,56 @@ body {
     border-radius: 15px;
       
     line-height: 1.3;
+=======
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+
+    
+    overflow: hidden;     /* 🔥 cut extra text */
+    width: 75%; 
+    line-height: 1.2;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 /* IMAGE BOX (FIXED HEIGHT) */
 .image-box {
+<<<<<<< HEAD
     width: 70%;
     height: 700px;
 
+=======
+    width: 70%;        /* 🔥 முன்னாடி 70% → இப்ப 90% */
+    height: 700px;     /* 🔥 height increase */
+    
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin-top: 20px;
+<<<<<<< HEAD
 
     border-radius: 20px;
 
     overflow: hidden;             /* 🔥 overflow cut */
+=======
+   
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 
 .image-box img {
+<<<<<<< HEAD
     width:100%;
     height:100%;
     object-fit:contain;
+=======
+    width: 100%;
+    height: 100%;
+    object-fit: contain;/* 🔥 full image visible */
+    border-radius: 20px;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 /* ================= RIGHT ================= */
@@ -116,8 +144,12 @@ body {
     flex-direction: column;
     align-items: center;   /* 🔥 center align */
     justify-content: flex-start;
+<<<<<<< HEAD
     margin-top: 3%;
 
+=======
+    margin-top: 5%;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 .right-column {
     width: 50%;
@@ -129,8 +161,12 @@ body {
     justify-content: flex-start;
 
     height: 100%;
+<<<<<<< HEAD
     margin-top: 3%;
 
+=======
+    margin-top: 5%;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
    
 }
 
@@ -154,16 +190,27 @@ body {
 
 /* spacing between them */
 .price {
+<<<<<<< HEAD
     background: linear-gradient(45deg, #00c6ff, #0072ff);
     color: #fff;
+=======
+    background-color: aqua;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     margin-right: 20px;  /* 🔥 gap */
 }
 
 .mrp {
+<<<<<<< HEAD
    background: linear-gradient(45deg, #ff4d6d, #ff006e);
    color: #fff;
 }
 
+=======
+    background-color: blueviolet;
+}
+
+
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 .description {
     font-size: 24px;
     font-weight: bold;
@@ -177,6 +224,7 @@ body {
 /* ================= FOOTER ================= */
 .footer {
     position: absolute;
+<<<<<<< HEAD
     bottom:15px;
     width: 100%;
     text-align: center;
@@ -194,6 +242,12 @@ a {
     font-size: 30px;
     vertical-align: middle;
     color: #25D366;
+=======
+    bottom: 1cm;
+    width: 100%;
+    text-align: center;
+    font-size:20px;
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 }
 
 </style>
@@ -223,8 +277,12 @@ a {
         height:100%;
       
     ">
+<<<<<<< HEAD
         <img src="{{client_logo}}" style="height:300px; margin-top: 27%;margin-left: 8%; ">
 
+=======
+        <img src="{{client_logo}}" style="height:230px; margin-top: 25%;margin-left: 12%; ">
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     </div>
 
 </div>
@@ -260,10 +318,15 @@ a {
     <div class="right-column">
 
     <div class="price-row">
+<<<<<<< HEAD
         <div class="mrp">MRP: ₹ {{p.mrp}}</div>
         <div class="price">UD Price: ₹ {{p.price}} + GST</div>
         
         
+=======
+        <div class="price">UD Price: ₹ {{p.price}}</div>
+        <div class="mrp">MRP: ₹ {{p.mrp}}</div>
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     </div>
 
     <div class="description">
@@ -276,6 +339,7 @@ a {
 </div>
 
 </div>
+<<<<<<< HEAD
 {% if p.delivery %}
 <div style="
     position:absolute;
@@ -296,6 +360,11 @@ a {
     <span class="wa-icon">💬</span> 📞 <a href="https://wa.me/{{sales_phone}}">{{sales_phone}}</a> |
     <span class="mail-icon">✉</span>
     <a href="mailto:{{sales_email}}">{{sales_email}}</a>
+=======
+
+<div class="footer">
+    Urbane Design Corporate Gifting Simplified | https://urbd.in | {{sales_phone}}
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
 </div>
 
 {% endif %}
@@ -330,10 +399,17 @@ a {
         width:100%;
         text-align:center;
         font-size:35px;
+<<<<<<< HEAD
         margin-left:32%;
 
     ">
         <a href="https://wa.me/{{sales_phone}}">{{sales_phone}}</a>
+=======
+        margin-left:31%;
+
+    ">
+        {{sales_phone}}
+>>>>>>> af92c76c41d60ed81b00d788cad14c986b12dd2c
     </div>
 
 </div>
