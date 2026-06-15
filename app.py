@@ -5,6 +5,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 from jinja2 import Template
+from weasyprint import HTML
 import base64
 import openpyxl
 import math
@@ -99,12 +100,7 @@ selected_brands = []
 
 if order_id_from_url:
 
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="catalog123",
-        database="catalogue_db"
-    )
+    conn = st.write("Database removed for cloud run")
 
     cursor = conn.cursor(dictionary=True)
 
