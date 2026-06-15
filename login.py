@@ -1,39 +1,37 @@
 import streamlit as st
 import pandas as pd
-import mysql.connector
-
 
 def check_login():
 
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="catalog123",
-        database="catalogue_db"
-    )
+    # Load users from Excel (NO MySQL)
+    try:
+        users_df = pd.read_excel("users.xlsx")
+    except Exception:
+        st.error("users.xlsx file not found")
+        st.stop()
 
-    users_df = pd.read_sql("SELECT * FROM users", conn)
-    conn.close()
-
+    # Clean column names
     users_df.columns = users_df.columns.str.strip().str.lower()
 
+    # session state init
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     if "role" not in st.session_state:
         st.session_state.role = None
 
+    if "username" not in st.session_state:
+        st.session_state.username = None
+
     if not st.session_state.logged_in:
 
-        # CENTER LAYOUT
+        # UI layout
         left, center, right = st.columns([2, 1, 2])
 
         with center:
 
-            # TOP SPACING
             st.markdown("<br><br><br>", unsafe_allow_html=True)
 
-            # LOGIN BOX
             with st.container(border=True):
 
                 st.markdown(
@@ -45,25 +43,17 @@ def check_login():
                     unsafe_allow_html=True
                 )
 
-                username = st.text_input(
-                    "",
-                    placeholder="Username"
-                )
-
-                email = st.text_input(
-                    "",
-                    placeholder="Email ID"
-                )
+                username = st.text_input("", placeholder="Username")
+                email = st.text_input("", placeholder="Email ID")
 
                 st.markdown("<br>", unsafe_allow_html=True)
 
                 if st.button("Login", use_container_width=True):
 
+                    # match user
                     user_match = users_df[
-                        (users_df["username"].str.strip().str.lower() ==
-                         username.strip().lower()) &
-                        (users_df["email"].str.strip().str.lower() ==
-                         email.strip().lower())
+                        (users_df["username"].str.strip().str.lower() == username.strip().lower()) &
+                        (users_df["email"].str.strip().str.lower() == email.strip().lower())
                     ]
 
                     if not user_match.empty:
