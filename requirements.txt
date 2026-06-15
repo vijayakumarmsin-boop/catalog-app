@@ -1,9 +1,7 @@
 streamlit
 pandas
+numpy
+openpyxl
 pillow
 requests
 jinja2
-openpyxl
-reportlab
-numpy
-mysql-connector-python
