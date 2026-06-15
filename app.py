@@ -5,7 +5,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 from jinja2 import Template
-from weasyprint import HTML
+
 import base64
 import openpyxl
 import math
